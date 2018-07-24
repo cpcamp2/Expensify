@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
@@ -28,16 +28,23 @@ const HelpPage = () => (
   </div>
 );
 
+const NotFoundPage = () => (
+  <div>
+    404!
+  </div>
+);
+
 const routes = (
-  // BrowserRouter expects the child to have a length of 1 so a div must be created
+  // BrowserRouter expects the child to have a length of 1 so a div or switch must be created
   // if there are to be multiple routes
   <BrowserRouter>
-    <div>
+    <Switch>
       <Route path="/" component={ExpenseDashBoardPage} exact={true} />
       <Route path="/create" component={AddExpensePage} />
       <Route path="/edit" component={EditExpensePage} />
       <Route path="/help" component={HelpPage} />
-    </div>
+      <Route component={NotFoundPage} />
+    </Switch>
   </BrowserRouter>
 );
 
