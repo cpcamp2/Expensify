@@ -173,7 +173,7 @@ const expenseThree = store.dispatch(addExpense({ description: 'phone', amount: 5
 // store.dispatch(setTextFilter('coffee'));
 // store.dispatch(setTextFilter());
 //
-store.dispatch(sortByAmount());
+// store.dispatch(sortByAmount());
 // store.dispatch(sortByDate());
 
 // store.dispatch(setStartDate(0));
