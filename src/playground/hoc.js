@@ -1,5 +1,5 @@
 // Higher Order Component (HOC) - A component (HOC) that renders another component
-// Advantages
+// Advantages of HOC
   // Reuse code
   // Render hijacking
   // Prop manipulation
