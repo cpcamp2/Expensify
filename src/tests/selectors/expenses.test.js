@@ -64,3 +64,14 @@ test('should sort by date', () => {
   const result = getVisibleExpenses(expenses, filters);
   expect(result).toEqual([ expenses[2], expenses[0], expenses[1]]);
 });
+
+test('should sort by amount', () => {
+  const filters = {
+    text: '',
+    sortBy: 'amount',
+    startDate: undefined,
+    endDate: undefined
+  };
+  const result = getVisibleExpenses(expenses, filters);
+  expect(result).toEqual([ expenses[1], expenses[2], expenses[0]]);
+});
