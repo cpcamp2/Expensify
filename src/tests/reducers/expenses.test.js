@@ -19,3 +19,19 @@ test('should add an expense to state', () => {
   const state = expensesReducer(undefined, action);
   expect(state.length).toBe(1);
 });
+
+test('should remove an expense from state', () => {
+  const currentState = [{
+    id: '123abc',
+    description: '',
+    note: '',
+    amount: 0,
+    createdAt: 0
+  }];
+  const action = {
+    type: 'REMOVE_EXPENSE',
+    id: '123abc'
+  };
+  const state = expensesReducer(currentState, action);
+  expect(state).toEqual([]);
+});
