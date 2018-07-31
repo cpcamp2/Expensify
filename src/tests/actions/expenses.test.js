@@ -1,4 +1,4 @@
-import { addExpense, editExpense, removeExpense} from '../../actions/expenses'
+import { addExpense, editExpense, removeExpense} from '../../actions/expenses';
 
 test('should setup add expense action object with provided values', () => {
   const expenseData = {
