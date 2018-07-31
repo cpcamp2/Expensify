@@ -21,5 +21,12 @@ const expenses = [{
 }]
 
 test('should filter by text value', () => {
-  const result = getVisibleExpenses();
+  const filters = {
+    text: 'e',
+    sortBy: 'date',
+    startDate: undefined,
+    endDate: undefined
+  };
+  const result = getVisibleExpenses(expenses, filters);
+  expect(result).toEqual([ expense[2], expenses[1]]);
 });
