@@ -36,3 +36,12 @@ test('should set sortBy to amount', () => {
   const state = filtersReducer(undefined, { type: 'SORT_BY_AMOUNT' });
   expect(state.sortBy).toBe('amount');
 });
+
+test('should set set start date', () => {
+  const action = {
+    type: 'SET_START_DATE',
+    startDate: moment(0).valueOf()
+  };
+  const state = filtersReducer(undefined, action);
+  expect(state.startDate).toBe(moment(0).valueOf());
+});
