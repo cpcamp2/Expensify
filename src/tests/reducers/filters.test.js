@@ -43,5 +43,14 @@ test('should set set start date', () => {
     startDate: moment(0).valueOf()
   };
   const state = filtersReducer(undefined, action);
-  expect(state.startDate).toBe(moment(0).valueOf());
+  expect(state.startDate).toEqual(moment(0).valueOf());
+});
+
+test('should set set end date', () => {
+  const action = {
+    type: 'SET_END_DATE',
+    endDate: moment(0).valueOf()
+  };
+  const state = filtersReducer(undefined, action);
+  expect(state.endDate).toEqual(moment(0).valueOf());
 });
