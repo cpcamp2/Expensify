@@ -11,5 +11,9 @@ test('should generator set start date action object', () => {
 });
 
 test('should generator set end date action object', () => {
-
+  const action = setEndDate(moment(0));
+  expect(action).toEqual({
+    type: 'SET_END_DATE',
+    endDate: moment(0)
+  });
 });
