@@ -40,22 +40,23 @@ test('should not remove expenses if id not found', () => {
   expect(state).toEqual(expenses);
 });
 
-// test('should add an expense to state', () => {
-//   const expense = {
-//     description: '',
-//     note: '',
-//     amount: 0,
-//     createdAt: 0
-//   };
-//   const action = {
-//     type: 'ADD_EXPENSE',
-//     expense
-//   };
-//   const state = expensesReducer(undefined, action);
-//   expect(state.length).toBe(1);
-// });
-//
-//
+test('should edit an expense', () => {
+  const action = {
+    type: 'EDIT_EXPENSE',
+    id: expenses[1].id,
+    updates: {
+      amount: 122000
+    }
+  };
+  const state = expensesReducer(expenses, action);
+  expect(state[1].amount).toBe(122000);
+});
+
+test('should not edit an expense if expense is not found', () => {
+
+});
+
+
 // test('should edit an expense from state', () => {
 //   const currentState = [{
 //     id: '123abc',
