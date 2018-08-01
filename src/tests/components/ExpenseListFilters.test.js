@@ -11,7 +11,7 @@ beforeEach(() => {
   sortByAmount = jest.fn();
   setStartDate = jest.fn();
   setEndDate = jest.fn();
-  wrapper = swallow(
+  wrapper = shallow(
     <ExpenseListFilters
       filters={filters}
       setTextFilter={setTextFilter}
@@ -22,8 +22,8 @@ beforeEach(() => {
     />)
 });
 
-test('', () => {
-
+test('should render ExpenseListFilters correctly', () => {
+  expect(wrapper).toMatchSnapshot();
 });
 
 // test('', () => {
