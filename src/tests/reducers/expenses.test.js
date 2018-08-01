@@ -53,24 +53,13 @@ test('should edit an expense', () => {
 });
 
 test('should not edit an expense if expense is not found', () => {
-
+  const action = {
+    type: 'EDIT_EXPENSE',
+    id: '-1',
+    updates: {
+      amount: 122000
+    }
+  };
+  const state = expensesReducer(expenses, action);
+  expect(state).toEqual(expenses);
 });
-
-
-// test('should edit an expense from state', () => {
-//   const currentState = [{
-//     id: '123abc',
-//     description: '',
-//     note: '',
-//     amount: 0,
-//     createdAt: 0
-//   }];
-//   const updates = { note: 'New note value' };
-//   const action = {
-//     type: 'EDIT_EXPENSE',
-//     id: '123abc',
-//     updates
-//   };
-//   const state = expensesReducer(currentState, action);
-//   expect(state[0].note).toEqual('New note value');
-// });
