@@ -6,6 +6,22 @@ test('should set default expenses values', () => {
   expect(state).toEqual([]);
 });
 
+test('should add an expense', () => {
+  const expense = {
+    id: '4',
+    description: 'Dog food',
+    note: '',
+    amount: 20000,
+    createdAt: 29500
+  };
+  const action = {
+    type: 'ADD_EXPENSE',
+    expense
+  };
+  const state = expensesReducer(expenses, action);
+  expect(state).toEqual([...expenses, expense]);
+});
+
 test('should remove expense by id', () => {
   const action = {
     type: 'REMOVE_EXPENSE',
