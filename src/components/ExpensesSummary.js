@@ -1,18 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import getExpensesTotal from '../selectors/expenses-total';
+import numeral from 'numeral';
 
 export const ExpensesSummary = (props) => (
   <div>
-    {console.log(props)}
-    {/* {
-      props.expenses.length === 0 ? (
-        <p>No expenses</p>
-      ) : (
-        props.expenses.map((expense) => {
-          return <ExpenseListItem key={expense.id} {...expense}/>
-        })
-      )
-    } */}
+    <p>
+      Viewing {props.expenses.length} expenses
+      totaling {numeral((getExpensesTotal(props.expenses)) / 100).format('$0,0.00')}
+    </p>
   </div>
 );
 
