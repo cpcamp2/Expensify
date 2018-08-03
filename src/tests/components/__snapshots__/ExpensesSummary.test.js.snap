@@ -1,12 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should correctly render ExpensesSummary component 1`] = `
+exports[`should correctly render ExpensesSummary component with expenses 1`] = `
 <div>
   <p>
     Viewing 
     3
      expenses totaling 
     $1,141.95
+  </p>
+</div>
+`;
+
+exports[`should correctly render ExpensesSummary component without expenses 1`] = `
+<div>
+  <p>
+    Viewing 
+    0
+     expenses totaling 
+    $0.00
   </p>
 </div>
 `;
