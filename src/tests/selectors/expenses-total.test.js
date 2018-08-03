@@ -13,3 +13,8 @@ test('should correctly add up a single expense', () => {
   const result = getExpensesTotal(expense);
   expect(result).toBe(2500);
 });
+
+test('should correctly add up all expenses', () => {
+  const result = getExpensesTotal(expenses);
+  expect(result).toBe(114195);
+});
