@@ -4,11 +4,11 @@ exports[`should correctly render ExpensesSummary component with multiple expense
 <div>
   <h4>
     Viewing 
-    3
+    52
      
     expenses
      totaling 
-    $1,141.95
+    $25,000,000.00
   </h4>
 </div>
 `;
@@ -21,7 +21,7 @@ exports[`should correctly render ExpensesSummary component with single expense 1
      
     expense
      totaling 
-    $1.95
+    $25.00
   </h4>
 </div>
 `;
