@@ -11,7 +11,23 @@ const config = {
 
 firebase.initializeApp(config);
 
+const database = firebase.database();
+
 // test connection
-firebase.database().ref().set({
-  name: 'Penn Camp'
+database.ref().set({
+  name: 'Penn Camp',
+  age: 25,
+  isSingle: true,
+  location: {
+    city: 'New York',
+    country: 'United States'
+  }
+});
+
+database.ref('age').set(27);
+database.ref('location/city').set('Charlottesville');
+
+database.ref('attributes').set({
+  height: 6,
+  weight: 190
 });
