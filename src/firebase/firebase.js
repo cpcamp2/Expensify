@@ -10,3 +10,8 @@ const config = {
 };
 
 firebase.initializeApp(config);
+
+// test connection
+firebase.database().ref().set({
+  name: 'Penn Camp'
+});
