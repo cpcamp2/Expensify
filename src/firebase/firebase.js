@@ -11,7 +11,40 @@ const config = {
 
 firebase.initializeApp(config);
 
-// test connection
-firebase.database().ref().set({
-  name: 'Penn Camp'
+const database = firebase.database();
+
+database.ref().set({
+  name: 'Penn Camp',
+  age: 25,
+  stressLife: 6,
+  job: {
+    title: 'Software Developer',
+    company: 'Google'
+  },
+  location: {
+    city: 'New York',
+    country: 'United States'
+  }
+}).then(() => {
+  console.log('Data is saved');
+}).catch((error) => {
+  console.log('This failed.', error);
 });
+
+database.ref().update({
+  stressLife: 9,
+  'job/company': 'Amazon',
+  'location/city': 'Seattle'
+}).then(() => {
+  console.log('Update successful')
+}).catch((error) => {
+  console.log('Update failed', error)
+});
+
+database.ref()
+  .remove()
+  .then(() => {
+    console.log('Data was removed');
+  }).catch((error) => {
+    console.log('Data removal failed.', error);
+  });
