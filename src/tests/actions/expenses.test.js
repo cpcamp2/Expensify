@@ -3,6 +3,8 @@ import thunk from 'redux-thunk';
 import { addExpense, editExpense, removeExpense} from '../../actions/expenses';
 import expenses from '../fixtures/expenses';
 
+const createMockStore = configureMockStore([thunk]);
+
 test('should setup add expense action object with provided values', () => {
   const action = addExpense(expenses[2]);
   expect(action).toEqual({
