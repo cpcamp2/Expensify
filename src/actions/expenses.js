@@ -22,7 +22,10 @@ export const startAddExpense = (expenseData = {}) => {
     const expense = { description, note, amount, createdAt };
 
     // Push expense to firebase database. Pass in ref to then for access to unique key
-    database.ref('expenses').push(expense).then((ref) => {
+    // Add return so that I can add another then to chain promises
+    // * since this has a promise attached the return is necessary so that
+    // another promise can be chained in the test case
+    return database.ref('expenses').push(expense).then((ref) => {
       dispatch(addExpense({
         id: ref.key,
         ...expense
