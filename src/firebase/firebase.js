@@ -13,20 +13,24 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
+export { firebase, database as default };
+
+// Firebase Reference Code
+
 // child_removed
-database.ref('expenses').on('child_removed', (snapshot) => {
-  console.log(snapshot.key, snapshot.val());
-});
+// database.ref('expenses').on('child_removed', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// });
 
 // child_changed
-database.ref('expenses').on('child_changed', (snapshot) => {
-  console.log(snapshot.key, snapshot.val());
-});
+// database.ref('expenses').on('child_changed', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// });
 
 // child_added
-database.ref('expenses').on('child_added', (snapshot) => {
-  console.log(snapshot.key, snapshot.val());
-});
+// database.ref('expenses').on('child_added', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// });
 
 // fetch and convert into an array with a subscription
 // database.ref('expenses').on('value', (snapshot) => {
