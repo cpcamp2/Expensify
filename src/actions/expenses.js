@@ -9,6 +9,7 @@ export const addExpense = (expense) => ({
 
 export const startAddExpense = (expenseData = {}) => {
   return (dispatch) => {
+    // This is a readable way of setting up default data for expenseData
     const {
       description = '',
       note = '',
@@ -16,8 +17,11 @@ export const startAddExpense = (expenseData = {}) => {
       createdAt = 0
     } = expenseData;
 
+    // Set up variable for cleaner code to pass in below. Get rid of uuid since firebase
+    // will create unique key for us.
     const expense = { description, note, amount, createdAt };
 
+    // Push expense to firebase database. Pass in ref to then for access to unique key
     database.ref('expenses').push(expense).then((ref) => {
       dispatch(addExpense({
         id: ref.key,
