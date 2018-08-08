@@ -13,26 +13,27 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref('expenses').push({
-  description: 'Coffee',
-  note: 'I bought coffee',
-  amount: 2500,
-  createdAt: 0
+database.ref('expenses')
+  .once('value')
+  .then((snapshot) => {
+    const expenses = [];
+    snapshot.forEach((childSnapshot) => {
+      expenses.push({
+        id: childSnapshot.key,
+        ...childSnapshot.val()
+      });
+    });
+
+    console.log(expenses);
   });
 
-database.ref('expenses').push({
-  description: 'House',
-  note: 'I bought a house',
-  amount: 250000000,
-  createdAt: 100
-});
+// database.ref('expenses').push({
+//   description: 'Coffee',
+//   note: 'I bought coffee',
+//   amount: 2500,
+//   createdAt: 0
+//   });
 
-database.ref('expenses').push({
-  description: 'Butter',
-  note: 'I bought a butter',
-  amount: 6000,
-  createdAt: 50
-});
 
 // database.ref('notes/-LJLzI9eQrACaNk3_gnF').remove();
 
