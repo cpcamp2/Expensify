@@ -1,3 +1,5 @@
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 import { addExpense, editExpense, removeExpense} from '../../actions/expenses';
 import expenses from '../fixtures/expenses';
 
@@ -10,7 +12,7 @@ test('should setup add expense action object with provided values', () => {
 });
 
 test('should add expense to database and store', () => {
-  
+
 });
 
 // test('should setup add expense action object with default values', () => {
