@@ -17,5 +17,3 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(undefined, mapDispatchToProps)(Header);
-
-// {/* <NavLink to="/help" activeClassName="is-active">Help</NavLink> */}
